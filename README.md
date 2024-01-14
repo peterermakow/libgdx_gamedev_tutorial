@@ -12,8 +12,12 @@
 в **core** пишется основная логика приложения,
 а в **desktop** указывается все, что касается экрана.
 
-Класс DesktopLauncher запускает приложение на экране. Gdx-Setup автоматически создаст Lwjgl3ApplicationConfiguration, куда необходиммо передать title, width, height, resizable и прочие параметры окна приложения. 
-Конфигурация и главный класс игры(в нашем случае StarGame) передаются в качестве параметров в Lwjgl3Application.
+Класс **DesktopLauncher** запускает приложение на экране. Gdx-Setup автоматически создаст **Lwjgl3ApplicationConfiguration**, куда необходиммо передать title, width, height, resizable и прочие параметры окна приложения. 
+Конфигурация и главный класс игры(в нашем случае StarGame) передаются в качестве параметров в **Lwjgl3Application**. Укажите следующие размера окна:
+```java
+config.setWindowedMode(1280, 720);
+```
+
 
 
 
