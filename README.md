@@ -33,6 +33,8 @@ config.setWindowedMode(1280, 720);
 public abstract class AbstractScreen implements Screen {...}
 ```
 
+Далее создадим класс игрового экрана **GameScreen**, который принимает в конструкторе SpriteBatch
+
 
 
 
