@@ -30,13 +30,13 @@ config.setWindowedMode(1280, 720);
   ```java
   setScreen(gameScreen)
   ``` 
-+ метод **render** отрабатывает каждый фрейм
++ метод **render** отрабатывает каждый фрейм.
 
- в нем высчитывается deltaTime, который далее передается в метод render у игрового экрана
- ```java
- float deltaTime = Gdx.graphics.getDeltaTime();
- getScreen().render(deltaTime);
- ```
+  в нем высчитывается deltaTime, который далее передается в метод render у игрового экрана
+  ```java
+  float deltaTime = Gdx.graphics.getDeltaTime();
+  getScreen().render(deltaTime);
+  ```
 + метод **dispose** при закрытии программы очищает ресурсы (LibGDX использует GPU, а Garbage Collectors не умеют чистить видеопамять)
 
   
