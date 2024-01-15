@@ -45,7 +45,7 @@ config.setWindowedMode(1280, 720);
 public abstract class AbstractScreen implements Screen {...}
 ```
 
-Далее создадим класс игрового экрана **GameScreen**, который принимает в конструкторе SpriteBatch
+Далее создадим класс игрового экрана **GameScreen**, который принимает в конструкторе SpriteBatch. Также в его задачи входит инициализация в методе *show* главного хаба игры (класс **GameController** хранит в себе ссылки на все игровые сущности) и класса-рисовальщика **WorldRenderer**. Последнему для своей работы необходим SpriteBatch и GameController. В методе *render*(отрабатывает каждый фрейм) класса GameScreen происходит апдейт и рисование. 
 
 
 
