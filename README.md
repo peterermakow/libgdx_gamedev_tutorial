@@ -15,7 +15,7 @@
 ### Приступим к реализации проекта!
 
 Класс **DesktopLauncher** запускает приложение на экране. Gdx-Setup автоматически создаст **Lwjgl3ApplicationConfiguration**, в него необходимо передать параметры окна приложения(fps, title, width, height, resizable и проч.). 
-Конфигурация и главный класс игры(в нашем случае StarGame) передаются в качестве параметров в **Lwjgl3Application**. Укажите следующие размера окна и максимальный FPS:
+Конфигурация и главный класс игры(в нашем случае **StarGame**) передаются в качестве параметров в **Lwjgl3Application**. Укажите следующие размера окна и максимальный FPS:
 ```java
 config.setForegroundFPS(60);
 config.setWindowedMode(1280, 720);
@@ -28,7 +28,7 @@ config.setWindowedMode(1280, 720);
 
   в этом методе инициализируется SpriteBatch и GameScreen, а также устанавливается экран
   ```java
-  setScreen(gameScreen)
+  setScreen(gameScreen);
   ``` 
 + метод **render** отрабатывает каждый фрейм.
 
