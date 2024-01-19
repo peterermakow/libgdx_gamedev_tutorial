@@ -82,7 +82,6 @@ public void render(Spritebatch batch) {
    batch.draw(SpaceTexture, 0, 0);
    for(Star star : stars) {
       batch.draw(StarTexture, star.position.x - 8, star.position.y - 8, 8, 8, 16, 16, star.scale, star.scale, 0, 0, 0, 16, 16, false, false)
-      // здесь реализуем эффект мерцания звезд
    }
 }
 ```
