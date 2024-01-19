@@ -73,4 +73,17 @@ Vector2 position = new Vector2(MathUtils.random(0, ScreenManager.WIDTH), MathUti
 ```java
 scale = Math.abs(position.x/40f) * 0.8f;
 ```
+В методе update(dt) каждый фрейм высчитываются новые координаты звезды, при этом если звезда ушла за пределы экрана (для верности -20), поставим её position.x в WIDTH + 20, а высоту высчитаем заново.
+
+Вернемся в класс *Background*: объявим текстуры космического неба и звезды, объявим массив звезд *stars* и укажем что *STAR_COUNT* равен 600. В конструкторе проинициализируем текстуры, создадим массив звезд и заполним его звездами.
+В методе update(dt) вызовем соответвующий метод у каждой звезды из массива *stars*, а в методе render отрисуем бэкграунд и звезды.
+```java
+public void render(Spritebatch batch) {
+   batch.draw(SpaceTexture, 0, 0);
+   for(Star star : stars) {
+      batch.draw(StarTexture, star.position.x - 8, star.position.y - 8, 8, 8, 16, 16, star.scale, star.scale, 0, 0, 0, 16, 16, false, false)
+   }
+}
+```
+Для создания эффекта мерцания звезд рисуем с малой вероятности одну и ту же звезду еще раз поверх той же самой звезды со scale*2. Оптимальная вероятность **MathItils.random(300) < 1**
 
