@@ -124,5 +124,13 @@ if(Gdx.input.isKeyPressed(Input.Keys.W)) {
 position.mulAdd(velocity, dt);
 checkBorders();
 ```
-
+В методе *checkBorders* добавим фичу, согласно которой при наскоке на стенки КК будет отскакивать от них. Приведённый ниже код сильно сокращен.
+```java
+private void checkBorders() {
+   if (position.x < 32) {
+      position.x = 32;
+      velocity.x *= -0.25f;
+   }
+}
+```
 
