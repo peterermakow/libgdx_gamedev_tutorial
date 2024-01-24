@@ -158,7 +158,28 @@ public interface Poolable {
 Далее создадим сам пул объектов
 ```java
 public class ObjectPool<T implements Poolable> {
+   protected List<T> activeList;
+   protected List<T> freeList;
 
+   public ObjectPool() {
+      this.activeList = new ArrayList<>();
+      this.freeList = new ArrayList<>();
+   }
+
+   public abstract T newObject();
+
+   public List<T> getActiveList() {
+      return activeList;
+   }
+
+   public T getActiveElement() {
+      if(freeList.isEmpty()) {
+         freeList.add(newObject());
+      }
+      T obj = freeList.remove(freeList.size() - 1);
+      activeList.add(obj);
+      return obj; 
+   }
 }
 ```
 
