@@ -157,7 +157,7 @@ public interface Poolable {
 ```
 Далее создадим сам пул объектов
 ```java
-public class ObjectPool<T implements Poolable> {
+public abstract class ObjectPool<T implements Poolable> {
    protected List<T> activeList;
    protected List<T> freeList;
 
