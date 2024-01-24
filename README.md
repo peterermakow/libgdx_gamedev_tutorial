@@ -180,6 +180,20 @@ public class ObjectPool<T implements Poolable> {
       activeList.add(obj);
       return obj; 
    }
+
+   private void free(int index) {
+      T obj = activeList.remove(index);
+      freeList.add(obj);
+   }
+
+   protected void checkPool() {
+      for(int i = activeList.size() - 1; i >= 0; i--) {
+         T obj = activeList.get(i);
+         if(obj.isActive == false) {
+            free(i);
+         }
+      }
+   } 
 }
 ```
 
