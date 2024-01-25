@@ -207,5 +207,9 @@ public abstract class ObjectPool<T implements Poolable> {
 
 ### Создание астероидов
 
+Энтити **Asteroid** и контроллер **AsteroidController** реализуются аналогично с Bullet за исключением того, что у Asteroid изначально задается *angle*, который устанавливается в зависимости от места появления астероида относительно центральной вертикали игрового поля. Столкновение астероидов и буллетов проверяется в метоже *checkCollisions* в классе GameController. Для этого используется метод **dst** у класса Vector2.
+```java
+if (bullet.getPosition().dst(asteroid.getPosition()) < 65.0f)) {...}
+```
 
 
